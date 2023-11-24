@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Főoldal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div th:insert="menu"></div>
+<div>
+    <a href="/products_list2">Kattintson ide a termékek megjelenítéséhez!</a>
+<p th:utext="${str}"></p>
+</div>
+<footer><div th:insert="footer"></div></footer>
+</body>
+</html>
