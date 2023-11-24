@@ -1,0 +1,69 @@
+<style>
+    div {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+        margin-right: 20px;
+        padding: 5px;
+        transition: background-color 0.3s;
+    }
+
+    a:hover {
+        color: #666;
+        background-color: #f2f2f2;
+    }
+
+    /* Navigációs menü */
+    div > div > a {
+        display: inline-block;
+        margin-right: 20px;
+        border-bottom: 1px solid #ccc; /* Vízszintes vonal színe és stílusa */
+        padding-bottom: 5px; /* Távolság a szövegtől a vízszintes vonalig */
+    }
+    /* Üdvözlő üzenet */
+    div > div:last-child {
+        margin-top: 20px;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-weight: bold;
+    }
+
+</style>
+
+<div xmlns:th="http://www.thymeleaf.org"
+     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <img src="https://assets.recipes.prod.wpsandwatch.com/var/kaapi/storage/images/2/7/4/7/2217472-1-eng-GB/cake_icing_wallpaper_vip_header_image.jpg">
+    <div>
+        <span sec:authorize="isAnonymous()">
+            <a th:href="@{/login}">Bejelentkezés</a>
+        </span>
+        <span sec:authorize="isAnonymous()">
+            <a th:href="@{/regisztral}">Regisztráció</a>
+        </span>
+        <a th:href="@{/home}">Kezdőlap</a>
+        <a th:href="@{/contact}">Eérhetőségek</a>
+        <a th:href="@{/velemeny}">Vélemények</a>
+        <a th:href="@{/products}">Termékek</a>
+        <span sec:authorize="isAuthenticated()">
+            <a th:href="@{/logout}">Kijelentkezés</a>
+
+        <span sec:authorize="hasRole('ROLE_ADMIN')">
+            <a th:href="@{/admin/home}">Admin</a>
+        </span>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+        <h3>Üdvözöljük  <span sec:authentication="principal.username">User</span></h3>
+
+    </div>
+</div>
