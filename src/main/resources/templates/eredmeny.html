@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Eredmény</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    .result p {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div th:insert="menu"></div>
+<h1>Köszönjük a véleményét!</h1>
+<div class="result">
+  <p th:text="'Azonosító: ' + ${attr2.id}" />
+  <p th:text="'Az Ön véleménye: ' + ${attr2.content}" />
+</div>
+<a href="/feladat">Következő vélemény írása</a>
+<footer><div th:insert="footer"></div></footer>
+</body>
+</html>
