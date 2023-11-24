@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Űrlap</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Ide írd a saját CSS-stílusodat */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"], input[type="reset"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+      margin-left: 10px;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div th:insert="menu"></div>
+<h1>Űrlap</h1>
+<P>Mondja el véleményét!</P>
+<form action="#" th:action="@{/feladat2}" th:object="${uzenetOsztaly}" method="post">
+  <div class="form-group">
+    <label for="id">Azonosító:</label>
+    <input type="text" class="form-control" id="id" th:field="*{id}">
+    <p th:if="${#fields.hasErrors('id')}" class="text-danger" th:errors="*{id}"></p>
+  </div>
+  <div class="form-group">
+    <label for="content">Üzenet:</label>
+    <input type="text" class="form-control" id="content" th:field="*{content}">
+    <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-success" value="Küldés">
+    <input type="reset" class="btn btn-secondary" value="Újra">
+  </div>
+</form>
+<footer><div th:insert="footer"></div></footer>
+</body>
+</html>
