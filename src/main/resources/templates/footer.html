@@ -1,0 +1,57 @@
+<style>
+footer {
+background-color: #f2f2f2;
+padding: 20px;
+display: flex;
+justify-content: center; /* A tartalom középre igazítása */
+gap: 20px; /* Eltolás a címek között */
+flex-wrap: wrap;
+}
+
+address {
+width: calc(30% - 20px); /* Az egyedi méretet a kívánt elrendezéshez igazíthatod */
+padding: 10px;
+margin-bottom: 20px;
+}
+</style>
+<div xmlns:th="http://www.thymeleaf.org"
+     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<footer>
+    <address>
+        <strong>Cuki Belváros</strong><br>
+        Kecskemét<br>
+        Édesség u. 14-16.<br><br>
+
+        <strong>Nyitvatartás:</strong><br>
+        Kedd-Szombat: 10.00-18.00<br>
+        Vasárnap: Zárva<br><br>
+
+        Tel.: +36 30 1234569<br>
+        Email: belvaros@cuki.hu<br><br>
+    </address>
+    <address>
+        <strong>Cukrászda 2</strong><br>
+        Kecskemét<br>
+        Másik u.  2.<br><br>
+
+        <strong>Nyitvatartás:</strong><br>
+        Szerda-Vasárnap: 10.00-18.00<br>
+        Hétfő-Kedd: Zárva<br><br>
+
+        Tel.: +36 30 1234568<br>
+        Email: cukraszda2@cuki.hu<br><br>
+    </address>
+    <address>
+        <strong>Cukrászda 3</strong><br>
+        Kecskemét<br>
+        Valahol u. 18.<br><br>
+
+        <strong>Nyitvatartás:</strong><br>
+        Kedd-Vasárnap: 10.00-18.00<br>
+        Hétfő: Zárva<br><br>
+
+        Tel.: +36 30 1234567<br>
+        Email: cukraszda3@cuki.hu<br><br>
+    </address>
+</footer>
+</div>
